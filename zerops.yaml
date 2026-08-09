@@ -15,4 +15,4 @@ zerops:
       ports:
         - port: 3000
           httpSupport: true
-      start: cd web && npm start -- -H 0.0.0.0
+      start: cd web && npm start -- -H 0.0.0.0 -p 3000
