@@ -12,6 +12,8 @@ var rootCmd = &cobra.Command{
 	Use:   "reaper",
 	Short: "REAPER - Full Stack Project Generator",
 	Long:  "REAPER is a CLI tool to scaffold full stack projects with various configurations.It supports multiple front-end and back-end frameworks and  database configurations shiva poda",
+	Args:  cobra.NoArgs,
+	Run:   runCreate,
 }
 
 func Execute() {

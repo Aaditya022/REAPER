@@ -13,16 +13,18 @@ var createCmd = &cobra.Command{
 	Use:   "create",
 	Short: "Create a new full stack project",
 	Long:  "Create a new full stack project with the specified configuration.",
-	Run: func(cmd *cobra.Command, args []string) {
-		printBanner()
-		dir := internal.Scaffold()
-		if dir != "" {
-			if err := deploy.MaybeDeploy(dir); err != nil {
-				fmt.Println(lipgloss.NewStyle().Foreground(lipgloss.Color("1")).Bold(true).Render("Error:"), err)
-				os.Exit(1)
-			}
+	Run:   runCreate,
+}
+
+func runCreate(cmd *cobra.Command, args []string) {
+	printBanner()
+	dir := internal.Scaffold()
+	if dir != "" {
+		if err := deploy.MaybeDeploy(dir); err != nil {
+			fmt.Println(lipgloss.NewStyle().Foreground(lipgloss.Color("1")).Bold(true).Render("Error:"), err)
+			os.Exit(1)
 		}
-	},
+	}
 }
 
 func init() {
