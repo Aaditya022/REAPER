@@ -1,0 +1,20 @@
+zerops:
+  - setup: web
+    build:
+      base: nodejs@22
+      buildCommands:
+        - cd web
+        - npm install
+        - npm run build
+      deployFiles:
+        - web/.next
+        - web/package.json
+        - web/public
+        - web/next.config.*
+        - web/node_modules
+    run:
+      base: nodejs@22
+      ports:
+        - port: 3000
+          httpSupport: true
+      start: cd web && npm start -- -H 0.0.0.0
