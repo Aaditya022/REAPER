@@ -2,6 +2,10 @@
 
 > **Build it. Ship it.**
 
+## ▶️ Watch the Demo
+
+[![REAPER Demo Video](https://img.youtube.com/vi/wHfkDJV3GLI/maxresdefault.jpg)](https://www.youtube.com/watch?v=wHfkDJV3GLI)
+
 REAPER is an open-source, terminal-first full-stack project generator. Pick your stack from an interactive menu and REAPER scaffolds a production-shaped application on your machine — then packages it, deploys it to the cloud, and health-checks the live URL, all from one command. No cloud dashboards, no Dockerfiles, no `kubectl`.
 
 > **Elevator pitch:** *You pick the stack in a terminal — REAPER writes the app, deploys it to a live HTTPS URL, and only reports success after that URL actually answers a health check.*
