@@ -1,0 +1,14 @@
+  - setup: frontend
+    build:
+      base: nodejs@22
+      buildCommands:
+        - cd frontend && npm ci
+        - cd frontend && npm run build
+      # The Angular build output is dist/<project-name>/browser; point this at the actual name.
+      deployFiles:
+        - frontend/dist/angular-app/browser/~
+      cache:
+        - node_modules
+        - .angular/cache
+    run:
+      base: static

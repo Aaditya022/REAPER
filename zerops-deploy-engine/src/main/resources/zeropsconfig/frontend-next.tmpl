@@ -1,0 +1,19 @@
+  - setup: frontend
+    build:
+      base: nodejs@22
+      buildCommands:
+        - npm ci
+        - npm run build
+      deployFiles:
+        - ./
+    run:
+      base: nodejs@22
+      ports:
+        - port: 3000
+          httpSupport: true
+{{envVariables}}
+      start: npm start
+      healthCheck:
+        httpGet:
+          port: 3000
+          path: /

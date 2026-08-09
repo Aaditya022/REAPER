@@ -1,0 +1,18 @@
+  - setup: backend
+    build:
+      base: nodejs@22
+      buildCommands:
+        - cd backend && npm ci
+      deployFiles:
+        - backend/~
+    run:
+      base: nodejs@22
+      ports:
+        - port: 3000
+          httpSupport: true
+{{envVariables}}
+      start: node index.js
+      healthCheck:
+        httpGet:
+          port: 3000
+          path: /

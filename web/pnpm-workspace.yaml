@@ -1,0 +1,6 @@
+minimumReleaseAge: 0
+verifyDepsBeforeRun: false
+onlyBuiltDependencies:
+  - sharp
+allowBuilds:
+  sharp: true
