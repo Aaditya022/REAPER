@@ -6,10 +6,10 @@ zerops:
         - cd web && npm install
         - cd web && npm run build
       deployFiles:
-        - web
+        - ./web/~/
     run:
       base: nodejs@22
       ports:
         - port: 3000
           httpSupport: true
-      start: cd web && npm start -- -p 3000 -H 0.0.0.0
+      start: npm start -- -p 3000 -H 0.0.0.0
