@@ -9,7 +9,6 @@ zerops:
         - web/.next
         - web/package.json
         - web/public
-        - web/next.config.*
         - web/node_modules
     run:
       base: nodejs@22
