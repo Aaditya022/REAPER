@@ -80,7 +80,7 @@ export function PricingSection() {
             </h2>
           </div>
           
-          <div className="lg:col-span-5 relative p-0 h-96 lg:h-auto">
+          <div className="lg:col-span-5 relative p-0 h-64 lg:h-auto">
             {/* Whale image */}
             <div className={`absolute inset-0 pointer-events-none transition-all duration-1000 delay-100 ${
               isVisible ? "opacity-100" : "opacity-0"

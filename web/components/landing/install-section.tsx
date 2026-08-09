@@ -140,9 +140,9 @@ export function InstallSection() {
                   <span className="w-3 h-3 rounded-full bg-[#28c840]" />
                 </div>
 
-                <div className="flex-1 flex items-center justify-center gap-2 font-mono text-xs text-white/50">
-                  <Terminal className="w-3.5 h-3.5" aria-hidden="true" />
-                  REAPER — Terminal
+                <div className="flex-1 min-w-0 flex items-center justify-center gap-2 font-mono text-xs text-white/50 truncate">
+                  <Terminal className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                  <span className="truncate">REAPER — Terminal</span>
                 </div>
 
                 <div className="w-[60px]" aria-hidden="true" />

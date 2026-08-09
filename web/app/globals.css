@@ -93,6 +93,11 @@
     line-height: 1.6;
     letter-spacing: 0.005em;
   }
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
   button, input, select, textarea {
     font-family: inherit;
   }

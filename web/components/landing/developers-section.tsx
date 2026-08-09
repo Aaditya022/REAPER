@@ -79,14 +79,14 @@ export function DevelopersSection() {
 
         {/* Description + Features — left half only */}
         <div
-          className={`max-w-[50%] transition-all duration-700 delay-100 ${
+          className={`max-w-full lg:max-w-[50%] transition-all duration-700 delay-100 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           <p className="text-xl text-muted-foreground mb-12 leading-[1.6] max-w-md">
             One command takes you from an interactive scaffold to a live Zerops deployment. Everything is generated, validated, and health-checked — no hand-written config.
           </p>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
               <div
                 key={feature.title}

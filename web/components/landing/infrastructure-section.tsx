@@ -248,7 +248,7 @@ export function InfrastructureSection() {
           <p className="text-lg text-muted-foreground max-w-2xl leading-[1.6]">
             Pick a frontend, backend, database, and ORM through guided prompts. REAPER detects the architecture, generates the zerops.yaml, and ships it — no hand-written config.
           </p>
-          <span className="font-mono text-sm text-muted-foreground whitespace-nowrap">
+          <span className="font-mono text-sm text-muted-foreground lg:whitespace-nowrap">
             reaper create — picks your stack for you
           </span>
         </div>

@@ -183,7 +183,7 @@ export function HeroSection() {
         {/* Main headline */}
         <div className="mb-8">
           <h1 
-            className={`text-left text-[clamp(2.5rem,7vw,5.5rem)] font-display font-bold leading-[1.1] tracking-[-0.02em] text-white transition-all duration-1000 ${
+            className={`text-left text-[clamp(2rem,7vw,5.5rem)] font-display font-bold leading-[1.1] tracking-[-0.02em] text-white transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -238,12 +238,12 @@ export function HeroSection() {
       </div>
       
       {/* Stats — 3 metrics static, no auto-scroll */}
-      <div 
-        className={`absolute bottom-12 left-0 right-0 px-6 lg:px-12 transition-all duration-700 delay-500 ${
+      <div
+        className={`relative z-10 w-full mt-auto px-6 lg:px-12 pt-16 lg:pt-24 pb-10 lg:pb-14 transition-all duration-700 delay-500 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto flex items-start gap-10 lg:gap-20">
+        <div className="max-w-[1400px] mx-auto flex flex-wrap items-start gap-x-10 lg:gap-x-20 gap-y-6">
           {[
             { value: "6", label: "deployment states" },
             { value: "155+", label: "engine tests" },
