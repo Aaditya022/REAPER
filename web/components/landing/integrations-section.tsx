@@ -114,7 +114,7 @@ export function IntegrationsSection() {
           <span className="w-12 h-px bg-foreground/20" />
         </span>
 
-        <h2 className={`text-[2.5rem] md:text-[3.25rem] lg:text-[4.25rem] font-display font-bold tracking-[-0.01em] leading-[1.1] transition-all duration-1000 ${
+        <h2 className={`text-[2.5rem] md:text-[3.25rem] lg:text-[4.25rem] font-display font-bold tracking-[-0.01em] leading-[1.1] origin-center scale-[1.18] transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}>
           Build with

@@ -81,7 +81,7 @@ export function HowItWorksSection() {
         {/* Header — titre + image cerisier */}
         <div className="relative mb-0 lg:mb-0 grid lg:grid-cols-2 gap-4 lg:gap-12 items-end">
           {/* Titre colonne gauche */}
-          <div className="overflow-hidden pb-0 lg:pb-32">
+          <div className="overflow-hidden pb-0 lg:pb-[25rem]">
             <div className={`transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}`}>
               <span className="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-wider text-white/40 mb-8">
                 <span className="w-12 h-px bg-white/20" />
@@ -89,7 +89,7 @@ export function HowItWorksSection() {
               </span>
             </div>
             
-            <h2 className={`text-[2rem] md:text-[2.5rem] lg:text-[3.25rem] font-display font-bold tracking-[-0.01em] leading-[1.15] transition-all duration-1000 delay-100 ${
+            <h2 className={`text-[2rem] md:text-[2.5rem] lg:text-[3.25rem] font-display font-bold tracking-[-0.01em] leading-[1.15] lg:origin-top-left lg:scale-[3] transition-all duration-1000 delay-100 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
             }`}>
               <span className="block">Create.</span>
