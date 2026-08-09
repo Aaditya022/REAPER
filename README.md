@@ -4,6 +4,8 @@
 
 REAPER is an open-source, terminal-first full-stack project generator. Pick your stack from an interactive menu and REAPER scaffolds a production-shaped application on your machine — then packages it, deploys it to the cloud, and health-checks the live URL, all from one command. No cloud dashboards, no Dockerfiles, no `kubectl`.
 
+> **Elevator pitch:** *You pick the stack in a terminal — REAPER writes the app, deploys it to a live HTTPS URL, and only reports success after that URL actually answers a health check.*
+
 ---
 
 ## Live Demo
@@ -85,6 +87,29 @@ Everything below is implemented in this repository.
 **Marketing / install site** (`web/`, Next.js)
 - Landing page with hero, features, process, infrastructure, security, and a "Run REAPER anywhere" install section (macOS Terminal window, copy button, tabs).
 - Serves `/install.sh` so the curl command above works against the live deployment.
+
+---
+
+## Built With
+
+| Layer | Technology | Where |
+| --- | --- | --- |
+| CLI / TUI | Go 1.24 · Cobra · Bubble Tea · Huh · Lipgloss | repo root `cmd/`, `internal/` |
+| Deploy engine (Ignition) | Java 17 · Spring Boot 3 · Maven | `zerops-deploy-engine/` |
+| Marketing + install site | Next.js 16 · TypeScript · TailwindCSS | `web/` |
+| Cloud runtime | Zerops (REST API + `zerops.yaml`) | live demo |
+| Generated app stacks | React / Next.js / Django / Express · Prisma · PostgreSQL / MySQL / MongoDB | engine templates |
+
+## For Judges: A 3-Minute Demo
+
+Everything here is real and reproducible — no mock data, no staged environments.
+
+1. **Open the live site** — https://web-2cea-3000.prg1.zerops.app/ — deployed to Zerops from this repo via [`zerops.yaml`](zerops.yaml).
+2. **Scaffold in ~60 seconds** — run `./reaper create`, pick a directory, and walk the menus: Frontend + Backend → React (TypeScript) → TailwindCSS → ExpressTS → Prisma → PostgreSQL → JWT. REAPER writes `frontend/` + `backend/`, a `.env`, and a local `docker-compose.yml`.
+3. **Deploy from the same terminal** — start the engine, re-run `create`, and answer **Yes** at the deploy prompt. Watch it stream `ANALYZING → CONFIGURING → DEPLOYING → HEALTH_CHECKING → HEALTHY`, then open the returned HTTPS URL in a browser.
+4. **Show the receipts** — the health gate means that URL returned `2xx` before the CLI reported success. The 155-test engine suite (`cd zerops-deploy-engine && mvn test`), `go build ./... && go vet ./... && go test ./...`, and the Next.js `tsc` + production build all pass.
+
+**Why this is different:** generation and deployment are the same experience, so a scaffolded app is a *live* app before you close the terminal — and success is verified, not assumed.
 
 ---
 
@@ -349,6 +374,19 @@ Current verified status: **Spring suite green (155 tests, 0 failures)**, Go `bui
 | `UNSUPPORTED_LAYOUT` / `NOT_A_STACKD_PROJECT` | The directory isn't a layout the analyzer recognizes. |
 | Database prompt rejects empty URL | A database URL is required when a database type is selected. |
 | Scaffold hangs at Vite install | First run downloads npm packages; give it a moment. |
+
+---
+
+## Roadmap
+
+Planned — not yet implemented:
+
+- **Persistent deployment history** — replace the in-memory store with an embedded database so deployments survive engine restarts.
+- **Multi-provider deploys** — pluggable adapters beyond Zerops (e.g. Fly.io, Railway).
+- **More stack presets** — Astro, SvelteKit, and additional ORMs (including the Drizzle option already listed in the CLI menu).
+- **Schema / DB migrations** — run migrations as part of the deploy pipeline.
+- **Health-check hardening** — retries, timeout jitter, and content assertions against the live page.
+- **Packaged installer** — ship the CLI as a `.dmg` / `.pkg` for non-developers.
 
 ---
 

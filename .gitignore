@@ -19,3 +19,4 @@ dist/
 # Generated demo projects (throwaway scaffold outputs, not source)
 zerops-demo/
 zerops-demo2/
+/Frontend + Backend React (JavaScript) ExpressJS Prisma PostgreSQ/
