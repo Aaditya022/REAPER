@@ -10,7 +10,6 @@ import { DevelopersSection } from "@/components/landing/developers-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { PricingSection } from "@/components/landing/pricing-section";
 import { CtaSection } from "@/components/landing/cta-section";
-import { InstallSection } from "@/components/landing/install-section";
 import { FooterSection } from "@/components/landing/footer-section";
 
 export default function Home() {
@@ -28,7 +27,6 @@ export default function Home() {
       <TestimonialsSection />
       <PricingSection />
       <CtaSection />
-      <InstallSection />
       <FooterSection />
     </main>
   );
