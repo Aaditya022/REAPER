@@ -11,7 +11,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "reaper",
 	Short: "REAPER - Full Stack Project Generator",
-	Long:  "REAPER is a CLI tool to scaffold full stack projects with various configurations.It supports multiple front-end and back-end frameworks and  database configurations shiva poda",
+	Long:  "REAPER is a CLI tool for scaffolding full-stack projects with configurable frontend, backend, and database stacks. Choose from React, Next.js, Django, Express, Prisma, Drizzle, PostgreSQL, MySQL, and MongoDB, then deploy straight to Zerops.",
 	Args:  cobra.NoArgs,
 	Run:   runCreate,
 }
@@ -24,6 +24,9 @@ func Execute() {
 }
 
 func init() {
-
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	helpFunc := rootCmd.HelpFunc()
+	rootCmd.SetHelpFunc(func(cmd *cobra.Command, args []string) {
+		printBanner()
+		helpFunc(cmd, args)
+	})
 }
